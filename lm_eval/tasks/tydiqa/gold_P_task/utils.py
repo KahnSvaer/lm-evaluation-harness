@@ -7,6 +7,7 @@ Mentioned Repo: https://github.com/allenai/bi-att-flow/blob/master/squad/evaluat
 import re
 import string
 from collections import Counter
+from functools import partial
 
 import datasets
 
@@ -68,13 +69,27 @@ def process_results(
     return {"exact_match": exact_match, "f1": f1}
 
 
-def process_docs(dataset: datasets.Dataset) -> datasets.Dataset:
+def process_docs(dataset: datasets.Dataset, language: str) -> datasets.Dataset:
     def _process_doc(doc):
         out_doc = {
+            "language": doc["id"].split("-")[0],
             "context": doc["context"],
             "question": doc["question"],
             "answers": doc["answers"]["text"][0],
         }
         return out_doc
 
-    return dataset.map(_process_doc)
+    new_dataset = dataset.map(_process_doc)
+    assert isinstance(new_dataset, datasets.Dataset), type(new_dataset)
+    return new_dataset.filter(lambda x: x["language"] == language)
+
+
+process_arabic = partial(process_docs, language="arabic")
+process_bengali = partial(process_docs, language="bengali")
+process_english = partial(process_docs, language="english")
+process_finnish = partial(process_docs, language="finnish")
+process_indonesian = partial(process_docs, language="indonesian")
+process_korean = partial(process_docs, language="korean")
+process_russian = partial(process_docs, language="russian")
+process_swahili = partial(process_docs, language="swahili")
+process_telugu = partial(process_docs, language="telugu")

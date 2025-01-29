@@ -31,16 +31,15 @@ Homepage: `https://github.com/google-research-datasets/tydiqa` , `https://ai.goo
 
 * `SelectP`:  Given a list of the passages in the article, return either (a) the index of the passage that answers the question or (b) NULL if no such passage exists.
 * `MinSpan`: Given the full text of an article, return one of (a) the start and end byte indices of the minimal span that completely answers the question; (b) YES or NO if the question requires a yes/no answer and we can draw a conclusion from the passage; (c) NULL if it is not possible to produce a minimal answer for this question.
-* `Gold Passage Task`:  Given a passage that is guaranteed to contain the answer, predict the single contiguous span of characters that answers the question.
+* `GoldP`:  Given a passage that is guaranteed to contain the answer, predict the single contiguous span of characters that answers the question.
 
 #### Tags
 
-* `tag_name`: `Short description`
+* `goldp`: All GoldP tasks including English language (English language task not to taken in group aggragate)
 
 #### Tasks
 
-* `task_name`: `1-sentence description of what this particular task does`
-* `task_name2`: ...
+* `goldp_{language}`: Language specific gold passage task
 
 ### Checklist
 
