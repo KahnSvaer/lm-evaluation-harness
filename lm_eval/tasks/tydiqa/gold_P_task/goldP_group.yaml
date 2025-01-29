@@ -1,13 +1,13 @@
-group: GoldP
+group: tydiqa_goldp
 task:
-  - goldp_indonesian.yaml
-  - goldp_korean.yaml
-  - goldp_russian.yaml
-  - goldp_swahili.yaml
-  - goldp_telugu.yaml
-  - goldp_finnish.yaml
-  - goldp_bengali.yaml
-  - goldp_arabic.yaml
+  - tydiqa_goldp_arabic
+  - tydiqa_goldp_bengali
+  - tydiqa_goldp_finnish
+  - tydiqa_goldp_indonesian
+  - tydiqa_goldp_korean
+  - tydiqa_goldp_russian
+  - tydiqa_goldp_swahili
+  - tydiqa_goldp_telugu
 aggregate_metric_list:
   - metric: exact_match
     aggregation: mean

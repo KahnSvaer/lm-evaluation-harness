@@ -1,9 +1,9 @@
 dataset_path: google-research-datasets/tydiqa
-dataset_name: primary_task
-tag: goldp_all
-train_split: train
+dataset_name: secondary_task
+tag: tydiqa_goldp_all
+training_split: train
 validation_split: validation
-few_shot_split: few_shot_split
+fewshot_split: train
 output_type: generate_until
 doc_to_text: "Context: {{context}}\n\nQuestion: {{question}}\n\nAnswer:"
 doc_to_target: "{{answers}}"
