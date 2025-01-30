@@ -1,0 +1,16 @@
+group: tydiqa_minspan
+task:
+  - tydiqa_minspan_arabic
+  - tydiqa_minspan_bengali
+  - tydiqa_minspan_finnish
+  - tydiqa_minspan_indonesian
+  - tydiqa_minspan_japanese
+  - tydiqa_minspan_korean
+  - tydiqa_minspan_russian
+  - tydiqa_minspan_swahili
+  - tydiqa_minspan_telugu
+  - tydiqa_minspan_thai
+aggregate_metric_list:
+
+metadata:
+  version: 0.0

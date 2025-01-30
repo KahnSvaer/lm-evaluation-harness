@@ -1,0 +1,16 @@
+group: tydiqa_selectp
+task:
+  - tydiqa_selectp_arabic
+  - tydiqa_selectp_bengali
+  - tydiqa_selectp_finnish
+  - tydiqa_selectp_indonesian
+  - tydiqa_selectp_japanese
+  - tydiqa_selectp_korean
+  - tydiqa_selectp_russian
+  - tydiqa_selectp_swahili
+  - tydiqa_selectp_telugu
+  - tydiqa_selectp_thai
+aggregate_metric_list:
+
+metadata:
+  version: 0.0

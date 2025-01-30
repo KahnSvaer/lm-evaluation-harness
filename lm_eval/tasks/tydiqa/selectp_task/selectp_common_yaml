@@ -1,0 +1,20 @@
+dataset_path: google-research-datasets/tydiqa
+dataset_name: primary_task
+tag: tydiqa_selectp_all
+training_split: train
+validation_split: validation
+fewshot_split: train
+output_type: generate_until
+doc_to_text: "Context: {{context}}\n\nQuestion: {{question}}\n\nAnswer:"
+doc_to_target: "[{{answers}},1]"
+
+process_results: !function utils.process_results
+metric_list:
+
+
+generation_kwargs:
+  until:
+    - "\n"
+  do_sample: false
+metadata:
+  version: 0.0

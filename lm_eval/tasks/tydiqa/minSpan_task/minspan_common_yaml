@@ -1,0 +1,25 @@
+dataset_path: google-research-datasets/tydiqa
+dataset_name: primary_task
+tag: tydiqa_minspan_all
+training_split: train
+validation_split: validation
+few_shot_split: train
+output_type: generate_until
+
+doc_to_text: "Context: {{context}}\n\nQuestion: {{question}}\n\nAnswer:"
+doc_to_target: "{{answers}}"
+process_results: !function utils.process_results
+metric_list:
+  - metric: exact_match
+    aggregation: mean
+    higher_is_better: true
+  - metric: f1
+    aggregation: mean
+    higher_is_better: true
+
+generation_kwargs:
+  until:
+    - "\n"
+  do_sample: false
+metadata:
+  version: 0.0
